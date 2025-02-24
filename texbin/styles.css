@@ -1,7 +1,5 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
@@ -14,7 +12,7 @@ body {
 
 /* Header styles */
 header {
-    background: #007BFF;
+    background: #38243d;
     color: #fff;
     padding: 1rem;
     text-align: center;
@@ -63,7 +61,7 @@ main {
 button {
     margin-top: 0.5rem;
     padding: 0.5rem 1rem;
-    background-color: #007BFF;
+    background-color: #AA96DA;
     color: white;
     border: none;
     border-radius: 4px;
@@ -87,13 +85,17 @@ button:hover {
 
 /* Footer styles */
 footer {
-    background: #007BFF;
+    background: #38243d;
     color: #fff;
     text-align: center;
     padding: 1rem;
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+footer a {
+    color: #C06C84;
 }
 
 /* Responsive Design */
