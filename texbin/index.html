@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEST SITE</title>
@@ -15,35 +15,35 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>TEST SITE</h1>
-        <nav>
-            <a href="#">About this site</a>
-            <a href="#">Source</a>
-        </nav>
+      <h1>TEST SITE</h1>
+      <nav>
+        <a href="#">About this site</a>
+        <a href="#">Source</a>
+      </nav>
     </header>
     <main>
-        <div class="editor-container">
-            <textarea id="markdownInput" placeholder="Type your markdown here..."></textarea>
-            <div id="characterCount">1500 characters remaining.</div>
-            <button id="generateUrlBtn">Generate URL</button>
-            <button id="copyToClipboardBtn">Copy to Clipboard</button>
-            <div>
-                <input type="text" id="generatedUrl" readonly style="width: 100%; max-width: 100%; box-sizing: border-box;">
-                <button id="clearUrlBtn">Clear</button>
-            </div>
+      <div class="editor-container">
+        <textarea id="markdownInput" placeholder="Type your markdown here..."></textarea>
+        <div id="characterCount">1500 characters remaining.</div>
+        <button id="generateUrlBtn">Generate URL</button>
+        <button id="copyToClipboardBtn">Copy to Clipboard</button>
+        <div>
+          <input type="text" id="generatedUrl" readonly style="width: 100%; max-width: 100%; box-sizing: border-box;">
+          <button id="clearUrlBtn">Clear</button>
         </div>
-        <div class="preview-container">
-            <h2>Preview</h2>
-            <div id="preview"></div>
-        </div>
+      </div>
+      <div class="preview-container">
+        <h2>Preview</h2>
+        <div id="preview"></div>
+      </div>
     </main>
     <footer>
-        <p>Written by DLD &copy; <span id="currentYear"></span>. All rights reserved.</p>
-        <a href="#">Report Issue</a>
+      <p>Written by DLD &copy; <span id="currentYear"></span>. All rights reserved.</p>
+      <a href="#">Report Issue</a>
     </footer>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
