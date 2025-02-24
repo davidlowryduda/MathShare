@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST SITE</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <header>
+        <h1>TEST SITE</h1>
+        <nav>
+            <a href="#">About this site</a>
+            <a href="#">Source</a>
+        </nav>
+    </header>
+    <main>
+        <div class="editor-container">
+            <textarea id="markdownInput" placeholder="Type your markdown here..."></textarea>
+            <div id="characterCount">2000 characters remaining.</div>
+        </div>
+        <div class="preview-container">
+            <h2>Preview</h2>
+            <div id="preview"></div>
+        </div>
+    </main>
+    <footer>
+        <p>Written by DLD &copy; <span id="currentYear"></span>. All rights reserved.</p>
+        <a href="#">Report Issue</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
