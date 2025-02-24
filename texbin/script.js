@@ -10,8 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to update the preview using marked.js
   function updatePreview(markdown) {
+    // Normalize backslashes: Convert single `\` to double `\\`
+    // so MathJax handles it correctly
+    markdown = markdown.replace(/\\/g, '\\\\');
     const htmlContent = marked.parse(markdown);
     preview.innerHTML = htmlContent;
+    MathJax.texReset(0);
     MathJax.typesetPromise([preview]).catch((err) => console.log(err));
   }
 
