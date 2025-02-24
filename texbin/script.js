@@ -8,6 +8,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const maxChars = 2000;
     let timeoutId;
 
+    // Function to update the preview using marked.js
+    function updatePreview(markdown) {
+        const htmlContent = marked.parse(markdown);
+        preview.innerHTML = htmlContent;
+        MathJax.typesetPromise([preview]).catch((err) => console.log(err));
+    }
+
+    // Function to load the markdown from the URL if available
+    function loadMarkdownFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        const base64Data = params.get('data');
+        if (base64Data) {
+            const markdown = atob(base64Data); // Decode base64 to markdown
+            markdownInput.value = markdown; // Populate the textarea with markdown
+            updatePreview(markdown); // Update the preview with the loaded markdown
+            const remainingChars = maxChars - markdown.length;
+            characterCount.textContent = `${remainingChars} characters remaining.`;
+            characterCount.style.color = remainingChars < 0 ? 'red' : 'gray';
+        }
+    }
+
+    // Load markdown from URL when the page loads
+    loadMarkdownFromUrl();
+
     // Update character count based on input
     markdownInput.addEventListener('input', () => {
         const inputLength = markdownInput.value.length;
@@ -30,17 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
             updatePreview(markdownInput.value);
         }, 2000);
     });
-
-    // Function to update the preview using marked.js
-    function updatePreview(markdown) {
-        // Convert markdown to HTML using marked.js
-        const htmlContent = marked.parse(markdown);
-
-        preview.innerHTML = htmlContent;
-
-        // Trigger MathJax to typeset the content
-        MathJax.typesetPromise([preview]).catch((err) => console.log(err));
-    }
 
     // Function to generate the URL
     generateUrlBtn.addEventListener('click', () => {
