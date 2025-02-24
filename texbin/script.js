@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const markdownInput = document.getElementById('markdownInput');
     const characterCount = document.getElementById('characterCount');
     const preview = document.getElementById('preview');
+    const generateUrlBtn = document.getElementById('generateUrlBtn');
+    const generatedUrlInput = document.getElementById('generatedUrl');
+    const copyToClipboardBtn = document.getElementById('copyToClipboardBtn');
     const maxChars = 2000;
     let timeoutId;
 
@@ -38,4 +41,22 @@ document.addEventListener('DOMContentLoaded', () => {
         // Trigger MathJax to typeset the content
         MathJax.typesetPromise([preview]).catch((err) => console.log(err));
     }
+
+    // Function to generate the URL
+    generateUrlBtn.addEventListener('click', () => {
+        const markdown = markdownInput.value;
+        const base64Encoded = btoa(markdown); // Encode markdown in base64
+        const url = `${window.location.href}?data=${base64Encoded}`; // Create URL with encoded data
+        generatedUrlInput.value = url; // Display generated URL
+    });
+
+    // Copy the generated URL to clipboard
+    copyToClipboardBtn.addEventListener('click', () => {
+        generatedUrlInput.select();
+        document.execCommand('copy');
+        alert('URL copied to clipboard!');
+    });
+
+    // Display the current year in the footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
 });
