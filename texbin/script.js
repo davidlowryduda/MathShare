@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const generateUrlBtn = document.getElementById('generateUrlBtn');
     const generatedUrlInput = document.getElementById('generatedUrl');
     const copyToClipboardBtn = document.getElementById('copyToClipboardBtn');
-    const maxChars = 2000;
+    const maxChars = 1500;
     let timeoutId;
 
     // Function to update the preview using marked.js
@@ -57,8 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to generate the URL
     generateUrlBtn.addEventListener('click', () => {
+        const currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.delete("data");
         const markdown = markdownInput.value;
         const base64Encoded = btoa(markdown); // Encode markdown in base64
+        currentUrl.searchParams.set("data", base64Encoded);
         const url = `${window.location.href}?data=${base64Encoded}`; // Create URL with encoded data
         generatedUrlInput.value = url; // Display generated URL
     });
