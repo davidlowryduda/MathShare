@@ -66,8 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const markdown = markdownInput.value;
     const base64Encoded = btoa(markdown); // Encode markdown in base64
     currentUrl.searchParams.set("data", base64Encoded);
-    const url = `${window.location.href}?data=${base64Encoded}`; // Create URL with encoded data
-    generatedUrlInput.value = url; // Display generated URL
+    generatedUrlInput.value = currentUrl; // Display generated URL
   });
 
   document.getElementById("clearUrlBtn").addEventListener("click", () => {
@@ -78,8 +77,18 @@ document.addEventListener('DOMContentLoaded', () => {
   copyToClipboardBtn.addEventListener('click', () => {
     generatedUrlInput.select();
     document.execCommand('copy');
-    alert('URL copied to clipboard!');
+    // alert('URL copied to clipboard!');
+    showNotification('URL copied to clipboard!');
   });
+
+  function showNotification(message, duration = 3000) {
+    const notification = document.getElementById("notification");
+    notification.textContent = message;
+    notification.classList.add("show");
+
+    setTimeout(() => { notification.classList.remove("show"); }, duration);
+  }
+
 
   // Display the current year in the footer
   document.getElementById('currentYear').textContent = new Date().getFullYear();
