@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const characterCount = document.getElementById('characterCount');
     const preview = document.getElementById('preview');
     const maxChars = 2000;
+    let timeoutId;
 
     // Update character count based on input
     markdownInput.addEventListener('input', () => {
@@ -18,8 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
             characterCount.style.color = 'gray';
         }
 
-        // Update the preview
-        updatePreview(markdownInput.value);
+        // Clear the previous timeout
+        clearTimeout(timeoutId);
+
+        // Set a new timeout to update the preview after 2 seconds
+        timeoutId = setTimeout(() => {
+            updatePreview(markdownInput.value);
+        }, 2000);
     });
 
     // Function to update the preview using marked.js
