@@ -66,6 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
         generatedUrlInput.value = url; // Display generated URL
     });
 
+    document.getElementById("clearUrlBtn").addEventListener("click", () => {
+        document.getElementById("generatedUrl").value = ""; // Clear the URL input field
+    });
+
     // Copy the generated URL to clipboard
     copyToClipboardBtn.addEventListener('click', () => {
         generatedUrlInput.select();

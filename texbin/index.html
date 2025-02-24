@@ -27,11 +27,12 @@
     <main>
         <div class="editor-container">
             <textarea id="markdownInput" placeholder="Type your markdown here..."></textarea>
-            <div id="characterCount">2000 characters remaining.</div>
+            <div id="characterCount">1500 characters remaining.</div>
             <button id="generateUrlBtn">Generate URL</button>
+            <button id="copyToClipboardBtn">Copy to Clipboard</button>
             <div>
-                <input type="text" id="generatedUrl" readonly>
-                <button id="copyToClipboardBtn">Copy to Clipboard</button>
+                <input type="text" id="generatedUrl" readonly style="width: 100%; max-width: 100%; box-sizing: border-box;">
+                <button id="clearUrlBtn">Clear</button>
             </div>
         </div>
         <div class="preview-container">
