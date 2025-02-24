@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathShare - MathJax</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      MathJax = {
+        tex: {
+          tags: 'ams',
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+        },
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/index.html">MathShare</a></h1>
+      <nav>
+        <a href="/about.html">About</a>
+        <a href="/latex.html#">How to write LaTeX?</a>
+        <a href="#">Source</a>
+      </nav>
+    </header>
+    <main>
+      <section class="about-container">
+        <h2>Writing mathematics</h2>
+        <p>
+        The flavor of mathjax+markdown supported here is similar to the flavor
+        supported on <a href="https://math.stackexchange.com/">Math.StackExchange</a>
+        or <a href="https://mathoverflow.net/">MathOverflow</a>.
+        A very complete reference for how to write math and markdown is the
+        <a href="https://math.meta.stackexchange.com/q/5020/9754">MathJax basic
+        tutorial and quick reference</a> on Math.StackExchange.
+        </p>
+        <p>
+          For more, see the following <a href="/index.html?data=IyBJbmxpbmUgTWF0aGVtYXRpY3MgIwoKSW5saW5lIG1hdGhlbWF0aWNzIGNhbiBiZSB3cml0dGVuIGluIHR3byB3YXlzLiBUaGV5IGNhbiBiZSBlbmNsb3NlZCB3aXRoaW4KZG9sbGFyIHNpZ25zIGAkYCBvciAmQmFja3NsYXNoOyggYW5kICZzb2w7KSAgcGFpcnMuIChOb3RlIHRoYXQgYmFja3NsYXNoZXMgaGF2ZQpzcGVjaWFsIG1lYW5pbmcgaGVyZSBhbmQgdHlwaW5nIGEgc2luZ2xlIGJhY2tzbGFzaCBwcm9iYWJseSB3b24ndCBkbyB3aGF0IHlvdQp3YW50IGhlcmUpLgoKRm9yIGV4YW1wbGU6CiRlXntpIFxwaX0gKyAxID0gMCQgb3IgXCggXGludF8wXjEgeF4yIGR4ID0gXGZyYWN7MX17M30uIFwpCgoKIyBEaXNwbGF5ZWQgTWF0aGVtYXRpY3MgIwoKRGlzcGxheWVkIG1hdGggYXBwZWFycyBvbiBpdHMgb3duIGxpbmUuIFRoZXJlIGFyZSB0aHJlZSB0eXBpY2FsIHdheXMgdG8gZ2V0IGRpc3BsYXllZCBtYXRoZW1hdGljcyBoZXJlOiB1c2UgZG91YmxlIGRvbGxhciBzaWducyBgJCRgLCB1c2UgJkJhY2tzbGFzaDtbIGFuZCAmc29sO10gcGFpcnMsIG9yIHVzZSAmQmFja3NsYXNoO2JlZ2lue2VxdWF0aW9ufSAmQmFja3NsYXNoO2VuZHtlcXVhdGlvbn0gZW52aXJvbm1lbnRzLgoKRm9yIGV4YW1wbGU6CgokJCBcc3VtX3tuIFxnZXEgMX0gXGZyYWN7MX17bl4yfSA9IFxmcmFje1xwaV4yfXs2fS4gJCQKClxbIFx6ZXRhKDQpID0gXGZyYWN7XHBpXjR9ezkwfS4gXF0KClxiZWdpbntlcXVhdGlvbn1cbGFiZWx7ZXE6emV0YX0KICBcemV0YSgwKSA9IC0gXGZyYWN7MX17MTJ9LgpcZW5ke2VxdWF0aW9ufQoKT3RoZXIgbGF0ZXggZW52aXJvbWVudHMgYXJlIGFsbG93ZWQuIFlvdSBjYW4gZXhwZXJpbWVudCBhIGJpdCBhbmQgZGV0ZXJtaW5lIHdoaWNoLiBOb3RlIHRoYXQgd2UgY2FuIGFsc28gcmVmZXIgYmFjazogZXF1YXRpb24gXGVxcmVme2VxOnpldGF9IGlzIG9mdGVuIG1pc2ludGVycHJldGVkLgoKCiMgTWFya2Rvd24gIwoKTWF0aGVtYXRpY3MgYW5kIG1hcmtkb3duIGNhbiBiZSBtaXhlZCBmcmVlbHkgd2hpbGUgcG9zdGluZyBhIG1hdGhlbWF0aWNzIHNuaXBwZXQuIFRleHQgaXMgd3JpdHRlbiBpbiBtYXJrZG93bi4KClRoaXMgaXMgYSBiaXQgZGlmZmVyZW50IHRoYW4gZWRpdG9ycyBsaWtlIE1pY3Jvc29mdCBXb3JkIG9yIEdvb2dsZSBTaGVldHMgYW5kIG1pZ2h0IHRha2Ugc29tZSBnZXR0aW5nIHVzZWQgdG8uCgpCdXQgdGhpcyBwYWdlIGlzIGFuIGV4YW1wbGUgcGFnZSBvZiB3aGF0IGlzIHBvc3NpYmxlLgoKTm90ZSBhbHNvIHRoYXQgdGhpcyBwYWdlIGlzIGFwcHJveGltYXRlbHkgdGhlIG1heGltdW0gbGVuZ3RoIGFsbG93ZWQgKGZvciBicm93c2VyIGVuY29kaW5nIHJlYXNvbnMpLg==">
+          demo MathShare page.</a> It <em>is</em> just a regular page, where
+          all of its data is stored in its URL.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <p>Written by David Lowry-Duda &copy; <span id="currentYear"></span>.
+      If this is useful, you can <a href="https://buymeacoffee.com/davidlowryduda">Buy Me a Coffee</a>.</p>
+      <p>This is free and open source software. The source code of this site is
+      available on <a href="#">GitHub</a> under the terms of the <a href="#">MIT License</a>.</p>
+      <p><a href="#">Report a bug, suggest improvement, or ask questions</a></p>
+    </footer>
+    <script>
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

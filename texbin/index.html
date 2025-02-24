@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEST SITE</title>
+    <title>MathShare</title>
     <link rel="stylesheet" href="styles.css">
     <script>
       MathJax = {
         tex: {
           tags: 'ams',
           inlineMath: [['$', '$'], ['\\(', '\\)']],
+          processEnvironments: true,
+          processRefs: true,
         },
       };
     </script>
@@ -18,9 +20,10 @@
   </head>
   <body>
     <header>
-      <h1>TEST SITE</h1>
+      <h1><a href="#">MathShare</a></h1>
       <nav>
-        <a href="#">About this site</a>
+        <a href="/about.html">About</a>
+        <a href="/latex.html">How to write latex?</a>
         <a href="#">Source</a>
       </nav>
     </header>
@@ -36,13 +39,16 @@
         </div>
       </div>
       <div class="preview-container">
-        <h2>Preview</h2>
+        <h2 id="preview-title">Preview</h2>
         <div id="preview"></div>
       </div>
     </main>
     <footer>
-      <p>Written by DLD &copy; <span id="currentYear"></span>. All rights reserved.</p>
-      <a href="#">Report Issue</a>
+      <p>Written by David Lowry-Duda &copy; <span id="currentYear"></span>.
+      If this is useful, you can <a href="https://buymeacoffee.com/davidlowryduda">Buy Me a Coffee</a>.</p>
+      <p>This is free and open source software. The source code of this site is
+      available on <a href="#">GitHub</a> under the terms of the <a href="#">MIT License</a>.</p>
+      <p><a href="#">Report a bug, suggest improvement, or ask questions</a></p>
     </footer>
     <script src="script.js"></script>
   </body>

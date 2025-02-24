@@ -25,6 +25,15 @@ header h1 {
   margin: 0;
 }
 
+header h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #E5989B;
+}
+
 nav a {
   color: #fff;
   margin: 0 1rem;
@@ -44,6 +53,7 @@ main {
   flex: 1;
   margin-right: 1rem;
   background: #fff;
+  min-width: 40%;
   padding: 1rem;
   padding-right: 2rem;
   border-radius: 5px;
@@ -91,13 +101,49 @@ button:hover {
 }
 
 #preview {
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
 }
 
-.preview-container h2 {
+.preview-container #preview-title {
   margin-top: 0; /* Removes default margin above the heading */
-  color: #AA96DA;
+  background-color: #AA96DA;
+  color: white;
   text-align: center;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.about-container h2 {
+  text-align: center;
+  color: #444;
+  /* color: #AA96DA; */
+}
+
+.about-container ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.about-container p, .about-container li {
+  font-size: 1.1em;
+}
+
+.about-container a {
+  color: #C06C84;
+}
+
+.about-container a:hover {
+  color: #E5989B;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
 }
 
 
@@ -133,5 +179,28 @@ footer a {
 
   .preview-container {
     margin-top: 1rem;
+  }
+}
+
+@media print {
+  header, footer, .editor-container, #preview-title {
+    display: none;
+  }
+
+  .preview-container {
+    box-shadow: none;
+  }
+
+  #preview {
+    border: 0;
+  }
+
+  #sheet {
+    border: 0;
+  }
+
+  @page {
+    size: auto;
+    margin: 0;
   }
 }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MathShare</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      MathJax = {
+        tex: {
+          tags: 'ams',
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+        },
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/index.html">MathShare</a></h1>
+      <nav>
+        <a href="/about.html#">About</a>
+        <a href="/latex.html">How to write LaTeX?</a>
+        <a href="#">Source</a>
+      </nav>
+    </header>
+    <main>
+      <section class="about-container">
+        <h2>About MathShare</h2>
+        <p>
+        MathShare is a simple tool for mathematicians to write, preview, and
+        share snippets of mathematical content using Markdown and MathJax.
+        The goal is to provide an easy-to-use editor that allows seamless
+        sharing of mathematical expressions.
+        </p>
+        <p>
+        MathShare is strongly inspired by MathB.in by Susam Pal and was made
+        just after Susam announced the closure of MathB.in.
+        </p>
+        <h3>Features</h3>
+        <ul>
+          <li>Real-time preview of Markdown and MathJax expressions.</li>
+          <li>Generate shareable URLs with embedded mathematical content.</li>
+          <li>Simple markdown+mathjax printing via CSS.</li>
+        </ul>
+        <h3>How It Works</h3>
+        <p>
+        Type your Markdown and LaTeX math expressions in the editor. The preview updates in
+        real-time (after a short delay to avoid stuttering).
+        When you're ready to share, click "Generate URL" to create a shareable link containing your
+        encoded content.
+        </p>
+        <p>
+          <em>All of the content is contained in that URL.</em>
+          Nothing is stored on the server. (Actually this is just a static website!).
+          Specifically, the URL contains a base64-encoded version of the tex+markdown, and this site
+          encodes and decodes these strings.
+        </p>
+        <p>
+          As browsers only allow URLs up to approximately 2000 characters, this imposes an
+          upper limit on the length of the content to approximately 1500 characters.
+          The content is then encoded to a valid data url of approximately 2000 characters (it's
+          longer because there are fewer valid characters in urls).
+        </p>
+        <p>
+          This site tries to allow simple printing of documents by removing all the unnecessary
+          aspects when printing the webpage.
+          Try selecting "print this page" on the main page from your browser and see for yourself.
+        </p>
+        <h3>Who Made This?</h3>
+        <p>
+          MathShare was created by <a href="https://davidlowryduda.com/about/">David Lowry-Duda</a> as
+          a free and open-source tool for the mathematical community.
+          If you find it useful, please
+          consider <a href="https://buymeacoffee.com/davidlowryduda">supporting him</a>.
+        </p>
+      </section>
+    </main>
+    <footer>
+      <p>Written by David Lowry-Duda &copy; <span id="currentYear"></span>.
+      If this is useful, you can <a href="https://buymeacoffee.com/davidlowryduda">Buy Me a Coffee</a>.</p>
+      <p>This is free and open source software. The source code of this site is
+      available on <a href="#">GitHub</a> under the terms of the <a href="#">MIT License</a>.</p>
+      <p><a href="#">Report a bug, suggest improvement, or ask questions</a></p>
+    </footer>
+    <script>
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
