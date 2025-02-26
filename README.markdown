@@ -2,7 +2,7 @@
 # TeX Bin #
 
 This is my replacement for mathb.in, which susam is closing down. There was a
-problem on her part where people were uploading nonsense.
+problem on his part where people were uploading nonsense.
 
 I want a more minimal service. The idea is very straightforward: encode data in
 URL parameters (giving a hard limit of something like 1000 characters). Allow
